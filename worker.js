@@ -1,3 +1,5 @@
+const debug = false; // true: accessing the root directory will display debugging information.
+
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __esm = (fn, res) => function __init() {
   return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
@@ -6,25 +8,10 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 
-// wrangler-modules-watch:wrangler:modules-watch
-var init_wrangler_modules_watch = __esm({
-  "wrangler-modules-watch:wrangler:modules-watch"() {
-    init_modules_watch_stub();
-  }
-});
-
-// C:/Users/WIN/AppData/Roaming/npm/node_modules/wrangler/templates/modules-watch-stub.js
-var init_modules_watch_stub = __esm({
-  "C:/Users/WIN/AppData/Roaming/npm/node_modules/wrangler/templates/modules-watch-stub.js"() {
-    init_wrangler_modules_watch();
-  }
-});
-
 // node_modules/js-yaml/lib/common.js
 var require_common = __commonJS({
   "node_modules/js-yaml/lib/common.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     function isNothing(subject) {
       return typeof subject === "undefined" || subject === null;
     }
@@ -72,7 +59,6 @@ var require_common = __commonJS({
 var require_exception = __commonJS({
   "node_modules/js-yaml/lib/exception.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     function formatError(exception, compact) {
       var where = "", message = exception.reason || "(unknown reason)";
       if (!exception.mark)
@@ -111,7 +97,6 @@ var require_exception = __commonJS({
 var require_snippet = __commonJS({
   "node_modules/js-yaml/lib/snippet.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var common = require_common();
     function getLine(buffer, lineStart, lineEnd, position, maxLineLength) {
       var head = "";
@@ -200,7 +185,6 @@ var require_snippet = __commonJS({
 var require_type = __commonJS({
   "node_modules/js-yaml/lib/type.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var YAMLException = require_exception();
     var TYPE_CONSTRUCTOR_OPTIONS = [
       "kind",
@@ -265,7 +249,6 @@ var require_type = __commonJS({
 var require_schema = __commonJS({
   "node_modules/js-yaml/lib/schema.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var YAMLException = require_exception();
     var Type = require_type();
     function compileList(schema, name) {
@@ -357,7 +340,6 @@ var require_schema = __commonJS({
 var require_str = __commonJS({
   "node_modules/js-yaml/lib/type/str.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     module.exports = new Type("tag:yaml.org,2002:str", {
       kind: "scalar",
@@ -372,7 +354,6 @@ var require_str = __commonJS({
 var require_seq = __commonJS({
   "node_modules/js-yaml/lib/type/seq.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     module.exports = new Type("tag:yaml.org,2002:seq", {
       kind: "sequence",
@@ -387,7 +368,6 @@ var require_seq = __commonJS({
 var require_map = __commonJS({
   "node_modules/js-yaml/lib/type/map.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     module.exports = new Type("tag:yaml.org,2002:map", {
       kind: "mapping",
@@ -402,7 +382,6 @@ var require_map = __commonJS({
 var require_failsafe = __commonJS({
   "node_modules/js-yaml/lib/schema/failsafe.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Schema = require_schema();
     module.exports = new Schema({
       explicit: [
@@ -418,7 +397,6 @@ var require_failsafe = __commonJS({
 var require_null = __commonJS({
   "node_modules/js-yaml/lib/type/null.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     function resolveYamlNull(data) {
       if (data === null)
@@ -463,7 +441,6 @@ var require_null = __commonJS({
 var require_bool = __commonJS({
   "node_modules/js-yaml/lib/type/bool.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     function resolveYamlBoolean(data) {
       if (data === null)
@@ -502,7 +479,6 @@ var require_bool = __commonJS({
 var require_int = __commonJS({
   "node_modules/js-yaml/lib/type/int.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var common = require_common();
     var Type = require_type();
     function isHexCode(c) {
@@ -642,7 +618,6 @@ var require_int = __commonJS({
 var require_float = __commonJS({
   "node_modules/js-yaml/lib/type/float.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var common = require_common();
     var Type = require_type();
     var YAML_FLOAT_PATTERN = new RegExp(
@@ -727,7 +702,6 @@ var require_float = __commonJS({
 var require_json = __commonJS({
   "node_modules/js-yaml/lib/schema/json.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     module.exports = require_failsafe().extend({
       implicit: [
         require_null(),
@@ -743,7 +717,6 @@ var require_json = __commonJS({
 var require_core = __commonJS({
   "node_modules/js-yaml/lib/schema/core.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     module.exports = require_json();
   }
 });
@@ -752,7 +725,6 @@ var require_core = __commonJS({
 var require_timestamp = __commonJS({
   "node_modules/js-yaml/lib/type/timestamp.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     var YAML_DATE_REGEXP = new RegExp(
       "^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$"
@@ -821,7 +793,6 @@ var require_timestamp = __commonJS({
 var require_merge = __commonJS({
   "node_modules/js-yaml/lib/type/merge.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     function resolveYamlMerge(data) {
       return data === "<<" || data === null;
@@ -837,7 +808,6 @@ var require_merge = __commonJS({
 var require_binary = __commonJS({
   "node_modules/js-yaml/lib/type/binary.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     var BASE64_MAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\n\r";
     function resolveYamlBinary(data) {
@@ -924,7 +894,6 @@ var require_binary = __commonJS({
 var require_omap = __commonJS({
   "node_modules/js-yaml/lib/type/omap.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     var _hasOwnProperty = Object.prototype.hasOwnProperty;
     var _toString = Object.prototype.toString;
@@ -969,7 +938,6 @@ var require_omap = __commonJS({
 var require_pairs = __commonJS({
   "node_modules/js-yaml/lib/type/pairs.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     var _toString = Object.prototype.toString;
     function resolveYamlPairs(data) {
@@ -1012,7 +980,6 @@ var require_pairs = __commonJS({
 var require_set = __commonJS({
   "node_modules/js-yaml/lib/type/set.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var Type = require_type();
     var _hasOwnProperty = Object.prototype.hasOwnProperty;
     function resolveYamlSet(data) {
@@ -1042,7 +1009,6 @@ var require_set = __commonJS({
 var require_default = __commonJS({
   "node_modules/js-yaml/lib/schema/default.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     module.exports = require_core().extend({
       implicit: [
         require_timestamp(),
@@ -1062,7 +1028,6 @@ var require_default = __commonJS({
 var require_loader = __commonJS({
   "node_modules/js-yaml/lib/loader.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var common = require_common();
     var YAMLException = require_exception();
     var makeSnippet = require_snippet();
@@ -1125,7 +1090,7 @@ var require_loader = __commonJS({
       return -1;
     }
     function simpleEscapeSequence(c) {
-      return c === 48 ? "\0" : c === 97 ? "\x07" : c === 98 ? "\b" : c === 116 ? "	" : c === 9 ? "	" : c === 110 ? "\n" : c === 118 ? "\v" : c === 102 ? "\f" : c === 114 ? "\r" : c === 101 ? "\x1B" : c === 32 ? " " : c === 34 ? '"' : c === 47 ? "/" : c === 92 ? "\\" : c === 78 ? "\x85" : c === 95 ? "\xA0" : c === 76 ? "\u2028" : c === 80 ? "\u2029" : "";
+      return c === 48 ? "\0" : c === 97 ? "\x07" : c === 98 ? "\b" : c === 116 ? "  " : c === 9 ? " " : c === 110 ? "\n" : c === 118 ? "\v" : c === 102 ? "\f" : c === 114 ? "\r" : c === 101 ? "\x1B" : c === 32 ? " " : c === 34 ? '"' : c === 47 ? "/" : c === 92 ? "\\" : c === 78 ? "\x85" : c === 95 ? "\xA0" : c === 76 ? "\u2028" : c === 80 ? "\u2029" : "";
     }
     function charFromCodepoint(c) {
       if (c <= 65535) {
@@ -2231,7 +2196,6 @@ var require_loader = __commonJS({
 var require_dumper = __commonJS({
   "node_modules/js-yaml/lib/dumper.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var common = require_common();
     var YAMLException = require_exception();
     var DEFAULT_SCHEMA = require_default();
@@ -2872,7 +2836,6 @@ var require_dumper = __commonJS({
 var require_js_yaml = __commonJS({
   "node_modules/js-yaml/index.js"(exports, module) {
     "use strict";
-    init_modules_watch_stub();
     var loader = require_loader();
     var dumper = require_dumper();
     function renamed(from, to) {
@@ -2912,30 +2875,33 @@ var require_js_yaml = __commonJS({
 });
 
 // src/index.js
-init_modules_watch_stub();
 var yaml = require_js_yaml();
 var src_default = {
   async fetch(request, env) {
     const url = new URL(request.url);
     const host = url.origin;
-    const frontendUrl = 'https://raw.githubusercontent.com/bulianglin/psub/main/frontend.html';
     const SUB_BUCKET = env.SUB_BUCKET;
-    let backend = env.BACKEND.replace(/(https?:\/\/[^/]+).*$/, "$1");
+    const BACKEND = env.BACKEND || 'https://api.dler.io/';
+    let backend = BACKEND.replace(/(https?:\/\/[^/]+).*$/, "$1");
     const subDir = "subscription";
     const pathSegments = url.pathname.split("/").filter((segment) => segment.length > 0);
-    if (pathSegments.length === 0) {
-      const response = await fetch(frontendUrl);
-      if (response.status !== 200) {
-        return new Response('Failed to fetch frontend', { status: response.status });
+
+    async function checkIfSubBucketBound() {
+      try {
+        await SUB_BUCKET.get("nonexistentKey");
+        return "SUB_BUCKET is bound";
+      } catch (error) {
+        return "SUB_BUCKET is not bound or other error occurred";
       }
-      const originalHtml = await response.text();
-      const modifiedHtml = originalHtml.replace(/https:\/\/bulianglin2023\.dev/, host);
-      return new Response(modifiedHtml, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/html',
-        },
-      });
+    }
+
+    if (pathSegments.length === 0) {
+      if (debug === true) {
+        const boundStatus = await checkIfSubBucketBound();
+        return new Response('BACKEND: ' + BACKEND + ' >> ' + backend + '\n' + boundStatus, { status: 200 }); // print config for testing
+      }else{
+        return Response.redirect('https://www.cloudflare.com/', 301); // redirect to cloudflare.com
+      }
     } else if (pathSegments[0] === subDir) {
       const key = pathSegments[pathSegments.length - 1];
       const object = await SUB_BUCKET.get(key);
