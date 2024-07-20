@@ -1,4 +1,4 @@
-const debug = false; // true: accessing the root directory will display debugging information.
+const debug = true; // true: accessing the root directory will display debugging information.
 
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __esm = (fn, res) => function __init() {
